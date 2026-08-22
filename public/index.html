@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
 
 <head>
@@ -20,499 +20,480 @@
   <div id="cursor" class="cursor-dot hidden md:block"></div>
   <div id="cursor-ring" class="cursor-ring hidden md:block"></div>
 
-  <!-- ===== Navbar ===== -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-[1000] transition-all duration-500">
+  <!-- =========================================================
+     AGE VERIFICATION MODAL
+========================================================= -->
+  <div id="ageModal" class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/90 backdrop-blur-md px-4">
+    <div class="relative w-full max-w-md rounded-2xl border border-white/10 bg-[#10130b] shadow-2xl p-8 text-center">
 
+      <!-- Logo -->
+      <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-lime/10 border border-lime/20">
+        <span class="text-lime font-bold text-xl">
+          PV
+        </span>
+      </div>
+
+      <!-- Title -->
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+        Age Verification
+      </h2>
+
+      <!-- Description -->
+      <p class="text-white/60 text-sm leading-relaxed mb-8">
+        You must be at least 18 years old to access this website.
+        By entering this website, you confirm that you meet the minimum
+        age requirement.
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3">
+
+        <button id="ageYes" type="button"
+          class="flex-1 rounded-full bg-lime px-6 py-3 font-semibold text-black transition-all hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(180,255,0,0.25)]">
+          Yes, I am 18+
+        </button>
+
+        <button id="ageNo" type="button"
+          class="flex-1 rounded-full border border-white/10 bg-white/5 px-6 py-3 font-semibold text-white/70 transition-all hover:bg-white/10 hover:text-white">
+          No, I am under 18
+        </button>
+
+      </div>
+
+      <p class="mt-6 text-xs text-white/30">
+        By continuing, you acknowledge that you meet the minimum age requirement.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- =========================================================
+     POLICIES MODAL
+========================================================= -->
+  <div id="policyModal"
+    class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/80 backdrop-blur-md px-4">
+    <div
+      class="relative w-full max-w-3xl max-h-[90vh] overflow-hidden rounded-2xl border border-white/10 bg-[#10130b] shadow-2xl">
+      <!-- Header -->
+      <div class="sticky top-0 z-10 border-b border-white/10 bg-[#10130b]/95 backdrop-blur-md px-6 py-5">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-lime/10 border border-lime/20">
+            <span class="text-lime font-bold">PV</span>
+          </div>
+
+          <div>
+            <h2 class="text-xl font-bold text-white">
+              Important Information
+            </h2>
+
+            <p class="text-sm text-white/50">
+              Please review our policies before continuing.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrollable content -->
+      <div class="max-h-[65vh] overflow-y-auto px-6 py-6 space-y-8">
+        <!-- Shipping -->
+        <div id="shipping-policy">
+          <h3 class="text-lg font-bold text-lime mb-3">Shipping Policy</h3>
+
+          <div class="space-y-3 text-sm leading-relaxed text-white/60">
+            <p>
+              <strong class="text-white">Shipping Carrier</strong><br />
+              We ship exclusively via UPS (United Parcel Service). UPS
+              provides full tracking for all orders.
+            </p>
+
+            <p>
+              <strong class="text-white">Processing Time</strong><br />
+              All orders are processed and shipped within up to 3 business
+              days after payment confirmation, excluding weekends and
+              holidays.
+            </p>
+
+            <p>
+              <strong class="text-white">Shipping Rates & Delivery</strong><br />
+              Standard Shipping: $9.00 USD flat rate for most domestic orders
+              within the continental United States. Orders of 10 or more units
+              qualify for free standard shipping.
+            </p>
+
+            <p>
+              Estimated UPS delivery times are usually 2–5 business days after
+              the package is shipped. These times are estimates and are not
+              guaranteed.
+            </p>
+
+            <p>
+              <strong class="text-white">Shipping Restrictions</strong><br />
+              We currently ship only within the continental United States. We
+              do not ship to P.O. Boxes, APO/FPO addresses, Alaska, Hawaii, or
+              U.S. territories.
+            </p>
+
+            <p>
+              All products are sold for research use only and are shipped with
+              proper labeling. The customer is responsible for compliance with
+              all applicable local, state, and federal regulations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Returns -->
+        <div id="return-policy">
+          <h3 class="text-lg font-bold text-lime mb-3">
+            Return & Refund Policy
+          </h3>
+
+          <div class="space-y-3 text-sm leading-relaxed text-white/60">
+            <p>
+              Due to the nature of our products, we do not accept returns or
+              offer refunds.
+            </p>
+
+            <p>
+              <strong class="text-white">All sales are final.</strong>
+            </p>
+
+            <p>
+              If you receive a damaged or incorrect product, please contact us
+              within 48 hours of delivery with photos and your order number.
+            </p>
+
+            <p>
+              Store credits, when applicable, are non-transferable and expire
+              6 months after issuance.
+            </p>
+
+            <p>
+              Store credits will not be issued for change of mind, accidental
+              orders, or failure to read product descriptions and disclaimers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Privacy -->
+        <div id="privacy-policy">
+          <h3 class="text-lg font-bold text-lime mb-3">Privacy Policy</h3>
+
+          <div class="space-y-3 text-sm leading-relaxed text-white/60">
+            <p>
+              We respect your privacy and are committed to protecting your
+              personal information.
+            </p>
+
+            <p>
+              <strong class="text-white">Information We Collect</strong><br />
+              Personal information such as name, shipping address, email,
+              phone number, order history, communication records, IP address
+              and browser information.
+            </p>
+
+            <p>
+              <strong class="text-white">How We Use Your Information</strong><br />
+              To process and ship orders, communicate with customers, provide
+              customer support, and improve our website and services.
+            </p>
+
+            <p>We do not sell your personal information to third parties.</p>
+
+            <p>
+              Information may be shared with UPS, payment processors, or legal
+              authorities when required by law.
+            </p>
+
+            <p>
+              You may request access, correction, or deletion of your personal
+              data by contacting us.
+            </p>
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div id="research-disclaimer" class="rounded-xl border border-lime/20 bg-lime/5 p-5">
+          <h3 class="text-lg font-bold text-lime mb-3">
+            Important Disclaimer
+          </h3>
+
+          <p class="text-sm leading-relaxed text-white/70">
+            All products sold on this website are for research use only. They
+            are not for human consumption, diagnostic, therapeutic, or any
+            other human use.
+          </p>
+
+          <p class="mt-3 text-sm leading-relaxed text-white/70">
+            By purchasing, you confirm that you are buying strictly for
+            legitimate research purposes and accept responsibility for
+            compliance with applicable laws and regulations.
+          </p>
+        </div>
+
+        <!-- Customer Support -->
+        <div>
+          <h3 class="text-lg font-bold text-lime mb-3">Customer Support</h3>
+
+          <p class="text-sm leading-relaxed text-white/60">
+            For questions about orders, shipping, or products, please contact
+            us with your order number for faster assistance.
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="border-t border-white/10 bg-[#10130b] px-6 py-5">
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input id="policyCheckbox" type="checkbox" class="mt-1 h-4 w-4 accent-lime" />
+
+          <span class="text-sm text-white/60">
+            I have read and acknowledge the Shipping Policy, Return & Refund
+            Policy, Privacy Policy, and Research Use Only Disclaimer.
+          </span>
+        </label>
+
+        <button id="acceptPolicy" type="button" disabled
+          class="mt-5 w-full rounded-full bg-lime px-6 py-3 font-semibold text-black transition-all disabled:cursor-not-allowed disabled:opacity-30 enabled:hover:scale-[1.02] enabled:hover:shadow-[0_0_25px_rgba(180,255,0,0.25)]">
+          Continue to PEP-V Labs
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
       <div class="flex items-center justify-between h-20">
-
-        <!-- ===== Logo ===== -->
-        <a href="#home" class="flex items-center gap-2 group shrink-0">
-
-          <div class="w-9 h-9 rounded-xl bg-lime/10 border border-lime/20
-                 flex items-center justify-center
-                 group-hover:bg-lime/20 transition-colors">
-
-            <span class="text-lime font-bold text-sm tracking-tight">
-              PEP-V
-            </span>
-
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2 group">
+          <div
+            class="w-9 h-9 rounded-xl bg-lime/10 border border-lime/20 flex items-center justify-center group-hover:bg-lime/20 transition-colors">
+            <span class="text-lime font-bold text-sm tracking-tight">PV</span>
           </div>
 
           <span class="font-semibold text-lg tracking-tight hidden sm:block">
             PEP-V Labs
           </span>
-
         </a>
 
-
-        <!-- ===== Desktop Navigation ===== -->
+        <!-- Desktop Navigation -->
         <div class="hidden xl:flex items-center gap-6">
+          <a href="#home" class="nav-link"> Home </a>
 
-          <!-- Vials -->
-          <div class="relative group">
+          <a href="#vials" class="nav-link"> Vials </a>
 
-            <button type="button" class="nav-link inline-flex items-center gap-2" aria-haspopup="true">
+          <a href="#research" class="nav-link"> Research Focus </a>
 
-              Vials
-
-              <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
-
-              </svg>
-
-            </button>
-
-
-            <!-- Vials Mega Menu -->
-            <div class="absolute left-1/2 top-full z-[9999]
-                   w-[760px] -translate-x-1/2 pt-5
-                   opacity-0 invisible translate-y-2
-                   transition-all duration-300
-                   group-hover:opacity-100
-                   group-hover:visible
-                   group-hover:translate-y-0">
-
-              <div class="vials-mega-menu glass-card p-8 shadow-glass">
-
-                <!-- Header -->
-                <div class="mb-7">
-
-                  <span class="text-xs font-semibold uppercase tracking-[0.2em] text-lime">
-                    Research Collection
-                  </span>
-
-                  <h3 class="mt-2 text-xl font-semibold text-white">
-                    Explore our research vials
-                  </h3>
-
-                  <p class="mt-2 max-w-xl text-sm text-white/50">
-                    Explore our collection organized by research focus.
-                  </p>
-
-                </div>
-
-
-                <!-- Categories -->
-                <div class="grid grid-cols-3 gap-3">
-
-                  <!-- Metabolic -->
-                  <a href="#metabolic" class="group/item rounded-2xl border border-white/5
-                         bg-white/[0.02] p-4
-                         transition-all duration-300
-                         hover:border-lime/20 hover:bg-lime/[0.03]">
-
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center
-                              rounded-xl bg-lime/10 text-lime">
-
-                      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                          d="M13 10V3L4 14h7v7l9-11h-7Z" />
-
-                      </svg>
-
-                    </div>
-
-                    <h4 class="text-sm font-semibold text-white">
-                      Metabolic
-                    </h4>
-
-                    <p class="mt-1 text-xs leading-relaxed text-white/40">
-                      Metabolic & body composition research
-                    </p>
-
-                  </a>
-
-
-                  <!-- Recovery -->
-                  <a href="#recovery" class="group/item rounded-2xl border border-white/5
-                         bg-white/[0.02] p-4
-                         transition-all duration-300
-                         hover:border-lime/20 hover:bg-lime/[0.03]">
-
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center
-                              rounded-xl bg-lime/10 text-lime">
-
-                      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v18M3 12h18" />
-
-                      </svg>
-
-                    </div>
-
-                    <h4 class="text-sm font-semibold text-white">
-                      Recovery
-                    </h4>
-
-                    <p class="mt-1 text-xs leading-relaxed text-white/40">
-                      Recovery & performance research
-                    </p>
-
-                  </a>
-
-
-                  <!-- Skin -->
-                  <a href="#skin" class="group/item rounded-2xl border border-white/5
-                         bg-white/[0.02] p-4
-                         transition-all duration-300
-                         hover:border-lime/20 hover:bg-lime/[0.03]">
-
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center
-                              rounded-xl bg-lime/10 text-lime">
-
-                      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                          d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z" />
-
-                      </svg>
-
-                    </div>
-
-                    <h4 class="text-sm font-semibold text-white">
-                      Skin & Aesthetic
-                    </h4>
-
-                    <p class="mt-1 text-xs leading-relaxed text-white/40">
-                      Skin & aesthetic research
-                    </p>
-
-                  </a>
-
-
-                  <!-- Cognitive -->
-                  <a href="#cognitive" class="group/item rounded-2xl border border-white/5
-                         bg-white/[0.02] p-4
-                         transition-all duration-300
-                         hover:border-lime/20 hover:bg-lime/[0.03]">
-
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center
-                              rounded-xl bg-lime/10 text-lime">
-
-                      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                          d="M9.5 3a3.5 3.5 0 0 0-3.3 4.67A3.5 3.5 0 0 0 7 14.5a3.5 3.5 0 0 0 6.5 1.75A3.5 3.5 0 0 0 20 13a3.5 3.5 0 0 0-2.1-3.2A3.5 3.5 0 0 0 14 4.5 3.5 3.5 0 0 0 9.5 3Z" />
-
-                      </svg>
-
-                    </div>
-
-                    <h4 class="text-sm font-semibold text-white">
-                      Cognitive & Neuro
-                    </h4>
-
-                    <p class="mt-1 text-xs leading-relaxed text-white/40">
-                      Cognitive & neuro research
-                    </p>
-
-                  </a>
-
-
-                  <!-- Hormonal -->
-                  <a href="#hormonal" class="group/item rounded-2xl border border-white/5
-                         bg-white/[0.02] p-4
-                         transition-all duration-300
-                         hover:border-lime/20 hover:bg-lime/[0.03]">
-
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center
-                              rounded-xl bg-lime/10 text-lime">
-
-                      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                          d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" />
-
-                      </svg>
-
-                    </div>
-
-                    <h4 class="text-sm font-semibold text-white">
-                      Hormonal & Reproductive
-                    </h4>
-
-                    <p class="mt-1 text-xs leading-relaxed text-white/40">
-                      Hormonal & reproductive research
-                    </p>
-
-                  </a>
-
-
-                  <!-- Sleep -->
-                  <a href="#sleep" class="group/item rounded-2xl border border-white/5
-                         bg-white/[0.02] p-4
-                         transition-all duration-300
-                         hover:border-lime/20 hover:bg-lime/[0.03]">
-
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center
-                              rounded-xl bg-lime/10 text-lime">
-
-                      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                          d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z" />
-
-                      </svg>
-
-                    </div>
-
-                    <h4 class="text-sm font-semibold text-white">
-                      Sleep & Wellness
-                    </h4>
-
-                    <p class="mt-1 text-xs leading-relaxed text-white/40">
-                      Sleep & wellness research
-                    </p>
-
-                  </a>
-
-
-                  <!-- Research Supplies -->
-                  <a href="#supplies" class="group/item rounded-2xl border border-white/5
-                         bg-white/[0.02] p-4
-                         transition-all duration-300
-                         hover:border-lime/20 hover:bg-lime/[0.03]">
-
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center
-                              rounded-xl bg-lime/10 text-lime">
-
-                      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M9 3h6m-5 0v5.5L5.5 18a2 2 0 0 0 1.7 3h9.6a2 2 0 0 0 1.7-3L14 8.5V3" />
-
-                      </svg>
-
-                    </div>
-
-                    <h4 class="text-sm font-semibold text-white">
-                      Research Supplies
-                    </h4>
-
-                    <p class="mt-1 text-xs leading-relaxed text-white/40">
-                      Laboratory research supplies
-                    </p>
-
-                  </a>
-
-                </div>
-
-
-                <!-- All Vials -->
-                <div class="mt-6 border-t border-white/5 pt-5">
-
-                  <a href="#vials" class="group inline-flex items-center gap-2
-                         text-sm font-semibold text-lime
-                         transition-colors hover:text-white">
-
-                    View all vials
-
-                    <svg class="h-4 w-4 transition-transform duration-300
-                           group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M5 12h14m-6-6 6 6-6 6" />
-
-                    </svg>
-
-                  </a>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <!-- Desktop Links -->
-          <a href="#research" class="nav-link">
-            Research Focus
-          </a>
-
-          <a href="#blog" class="nav-link">
-            Blog
-          </a>
-
-          <a href="#about" class="nav-link">
-            About Us
-          </a>
-
+          <a href="#about" class="nav-link"> About Us </a>
         </div>
 
-
-        <!-- ===== Right Side ===== -->
+        <!-- Right Side -->
         <div class="flex items-center gap-4">
-
-          <!-- Desktop Shop -->
+          <!-- Shop -->
           <a href="#vials" class="btn-glow hidden sm:inline-flex">
             Shop Vials
           </a>
 
-
-          <!-- Mobile Menu Button -->
-          <button id="menu-toggle" type="button" class="xl:hidden w-10 h-10
-                 flex flex-col items-center justify-center
-                 gap-1.5 rounded-xl
-                 border border-white/10
-                 bg-white/[0.02]
-                 hover:bg-white/[0.05]
-                 transition-all" aria-label="Toggle menu" aria-expanded="false">
-
-            <span class="menu-bar w-6 h-0.5 bg-white transition-all duration-300"></span>
-            <span class="menu-bar w-6 h-0.5 bg-white transition-all duration-300"></span>
-            <span class="menu-bar w-6 h-0.5 bg-white transition-all duration-300"></span>
-
+          <!-- Mobile Menu -->
+          <button id="menu-toggle" class="xl:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+            aria-label="Toggle menu">
+            <span class="menu-bar w-6 h-0.5 bg-white transition-all"></span>
+            <span class="menu-bar w-6 h-0.5 bg-white transition-all"></span>
+            <span class="menu-bar w-6 h-0.5 bg-white transition-all"></span>
           </button>
-
         </div>
-
       </div>
-
-
-      <!-- ===== Responsive Mobile Menu ===== -->
-      <div id="mobile-menu" class="xl:hidden hidden border-t border-white/5">
-
-        <div class="py-6 flex flex-col gap-2">
-
-          <a href="#home" class="mobile-nav-link">
-            Home
-          </a>
-
-          <a href="#vials" class="mobile-nav-link-featured">
-            Vials
-          </a>
-
-          <a href="#research" class="mobile-nav-link">
-            Research Focus
-          </a>
-
-          <a href="#blog" class="mobile-nav-link">
-            Blog
-          </a>
-
-          <a href="#about" class="mobile-nav-link">
-            About Us
-          </a>
-
-          <a href="#vials" class="btn-glow text-center mt-3">
-            Shop Vials
-          </a>
-
-        </div>
-
-      </div>
-
     </div>
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="xl:hidden hidden bg-dark/95 backdrop-blur-xl border-t border-white/5">
+      <div class="px-6 py-6 flex flex-col gap-4">
+        <a href="#home" class="mobile-nav-link"> Home </a>
+
+        <a href="#vials" class="mobile-nav-link"> Vials </a>
+
+        <a href="#research" class="mobile-nav-link"> Research Focus </a>
+
+        <a href="#about" class="mobile-nav-link"> About Us </a>
+
+        <a href="#vials" class="btn-glow text-center mt-2"> Shop Vials </a>
+      </div>
+    </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
-    <canvas id="particles" class="absolute inset-0 w-full h-full z-0"></canvas>
-    <div class="hero-gradient absolute inset-0 z-0"></div>
-    <div
-      class="hero-glow absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-lime/5 blur-[120px] z-0">
+  <!-- =========================
+     HERO SECTION
+========================= -->
+  <section id="home" class="relative min-h-screen overflow-hidden">
+    <!-- ===== HERO BACKGROUND ===== -->
+    <div class="absolute inset-0 z-0">
+      <!-- Imagen de los 4 viales -->
+      <img src="img/hero-vials-bg.png" alt="" class="absolute inset-0 w-full h-full object-cover object-[center_20%]" />
+
+      <!-- Overlay general -->
+      <div class="absolute inset-0 bg-black/35"></div>
+
+      <!-- Oscurece principalmente la izquierda para mejorar el texto -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/20"></div>
+
+      <!-- Degradado superior suave -->
+      <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/30 to-transparent"></div>
+
+      <!-- Degradado inferior -->
+      <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-32 pb-20">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-        <div class="reveal">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-            <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span>
-            <span class="text-sm text-white/70 font-medium">Science-Backed Formulation</span>
-          </div>
-          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
-            Precision for<br />
-            <span class="text-gradient">Research.</span>
-          </h1>
-          <p class="text-lg sm:text-xl text-white/60 max-w-lg mb-10 leading-relaxed">
-            Human-focused supplementation powered by science.
-          </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="#vials" class="btn-glow btn-glow-lg group">
-              Shop Vials
-              <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-                viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-            <a href="#about" class="btn-outline">About Us</a>
-          </div>
+    <!-- ===== PARTICLES ===== -->
+    <canvas id="particles" class="absolute inset-0 w-full h-full z-[1]">
+    </canvas>
+
+    <!-- ===== GLOW ===== -->
+    <div
+      class="hero-glow absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-lime/5 blur-[140px] z-[1]">
+    </div>
+
+    <!-- =========================
+       HERO CONTENT
+  ========================= -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-32 pb-10">
+      <!-- ===== TEXT ===== -->
+      <div class="max-w-2xl reveal">
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/40 border border-white/10 backdrop-blur-sm mb-8">
+          <span class="w-2 h-2 rounded-full bg-lime animate-pulse"> </span>
+
+          <span class="text-sm text-white/70 font-medium">
+            Science-Backed Formulation
+          </span>
         </div>
 
-        <div class="relative flex justify-center lg:justify-end reveal reveal-delay-2">
-          <div id="hero-bottle" class="relative animate-float">
-            <div class="absolute inset-0 bg-lime/10 rounded-full blur-[80px] scale-75 animate-pulse-glow"></div>
-            <div class="bottle-container relative">
-              <img src="img/aod9604-removebg.png" alt="PEP-V Labs Premium Supplement Bottle"
-                class="bottle-image w-72 sm:w-80 lg:w-[420px] h-auto object-contain drop-shadow-2xl" loading="eager" />
-              <div class="bottle-shine absolute inset-0 pointer-events-none"></div>
+        <!-- Title -->
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
+          Precision for<br />
+
+          <span class="text-gradient"> Research. </span>
+        </h1>
+
+        <!-- Description -->
+        <p class="text-lg sm:text-xl text-white/60 max-w-lg mb-10 leading-relaxed">
+          Human-focused supplementation powered by science.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex flex-wrap gap-4">
+          <a href="#vials" class="btn-glow btn-glow-lg group">
+            Shop Vials
+
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+
+          <a href="#about" class="btn-outline"> About Us </a>
+        </div>
+      </div>
+
+      <!-- =========================
+         STATS INSIDE HERO
+    ========================= -->
+
+      <div class="relative z-10 mt-32 pb-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-6xl mx-auto">
+          <!-- 99% -->
+          <div class="stat-card reveal">
+            <div class="stat-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955
+                   11.955 0 0112 2.944a11.955
+                   11.955 0 01-8.618 3.04A12.02
+                   12.02 0 003 9c0 5.591
+                   3.824 10.29 9 11.622
+                   5.176-1.332 9-6.03
+                   9-11.622 0-1.042-.133-2.052
+                   -.382-3.016z" />
+              </svg>
             </div>
+
+            <h3 class="text-3xl font-bold text-lime mb-1">99%</h3>
+
+            <p class="text-white/50 text-sm font-medium">Purity</p>
+          </div>
+
+          <!-- USA -->
+          <div class="stat-card reveal reveal-delay-1">
+            <div class="stat-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012
+                   2v1a2 2 0 002 2 2 2
+                   0 012 2v2.945M8 3.935V5.5
+                   A2.5 2.5 0 0010.5 8h.5a2
+                   2 0 012 2 2 2 0 104
+                   0 2 2 0 012-2h1.064M15
+                   20.488V18a2 2 0 012-2h3.064
+                   M21 12a9 9 0 11-18 0
+                   9 9 0 0118 0z" />
+              </svg>
+            </div>
+
+            <h3 class="text-3xl font-bold text-lime mb-1">USA</h3>
+
+            <p class="text-white/50 text-sm font-medium">Manufactured</p>
+          </div>
+
+          <!-- 3rd Party -->
+          <div class="stat-card reveal reveal-delay-2">
+            <div class="stat-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12
+                   a2 2 0 002 2h10a2 2 0
+                   002-2V7a2 2 0 00-2-2h-2
+                   M9 5a2 2 0 002 2h2a2
+                   2 0 002-2M9 5a2 2 0
+                   012-2h2a2 2 0 012 2m-6
+                   9l2 2 4-4" />
+              </svg>
+            </div>
+
+            <h3 class="text-3xl font-bold text-lime mb-1">3rd Party</h3>
+
+            <p class="text-white/50 text-sm font-medium">Tested</p>
+          </div>
+
+          <!-- GMP -->
+          <div class="stat-card reveal reveal-delay-3">
+            <div class="stat-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-width="1.5" d="M19.428 15.428a2 2 0
+                   00-1.022-.547l-2.387-.477a6
+                   6 0 00-3.86.517l-.318.158a6
+                   6 0 01-3.86.517L6.05 15.21a2
+                   2 0 00-1.806.547M8 4h8l-1
+                   1v5.172a2 2 0 00.586
+                   1.414l5 5c1.26 1.26.367
+                   3.414-1.415 3.414H4.828c-1.782
+                   0-2.674-2.154-1.414-3.414l5-5A2
+                   2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <h3 class="text-3xl font-bold text-lime mb-1">GMP</h3>
+            <p class="text-white/50 text-sm font-medium">Certified</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 animate-bounce">
-      <span class="text-xs text-white/40 uppercase tracking-widest">Scroll</span>
+    <!-- =========================
+       SCROLL
+  ========================= -->
+    <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 animate-bounce">
+      <span class="text-xs text-white/40 uppercase tracking-widest">
+        Scroll
+      </span>
       <svg class="w-5 h-5 text-lime/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="relative py-24 border-y border-white/5">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-        <div class="stat-card reveal">
-          <div class="stat-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          </div>
-          <h3 class="text-3xl font-bold text-lime mb-1">99%</h3>
-          <p class="text-white/50 text-sm font-medium">Purity</p>
-        </div>
-        <div class="stat-card reveal reveal-delay-1">
-          <div class="stat-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-3xl font-bold text-lime mb-1">USA</h3>
-          <p class="text-white/50 text-sm font-medium">Manufactured</p>
-        </div>
-        <div class="stat-card reveal reveal-delay-2">
-          <div class="stat-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-            </svg>
-          </div>
-          <h3 class="text-3xl font-bold text-lime mb-1">3rd Party</h3>
-          <p class="text-white/50 text-sm font-medium">Tested</p>
-        </div>
-        <div class="stat-card reveal reveal-delay-3">
-          <div class="stat-icon">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-            </svg>
-          </div>
-          <h3 class="text-3xl font-bold text-lime mb-1">GMP</h3>
-          <p class="text-white/50 text-sm font-medium">Certified</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -523,9 +504,13 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative">
       <div class="text-center mb-16 reveal">
         <span class="category-badge mb-4">Featured Category</span>
-        <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">Research-Grade Vials</h2>
-        <p class="text-white/50 max-w-2xl mx-auto text-lg">Our signature line of precision-formulated vials —
-          lyophilized peptides and compounds in pharmaceutical-grade packaging.</p>
+        <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
+          Research-Grade Vials
+        </h2>
+        <p class="text-white/50 max-w-2xl mx-auto text-lg">
+          Our signature line of precision-formulated vials — lyophilized
+          peptides and compounds in pharmaceutical-grade packaging.
+        </p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -536,11 +521,12 @@
           <div class="p-6">
             <span class="category-badge mb-3">Best Seller</span>
             <h3 class="text-xl font-semibold mb-2">BPC-157 Vial</h3>
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">5mg lyophilized peptide vial for tissue recovery and
-              gut health research applications.</p>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
             <div class="flex items-center justify-between">
               <span class="text-2xl font-bold text-lime">$120</span>
-              <button class="btn-glow btn-glow-sm">Buy Now</button>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('BPC-157 Vial')">
+                Buy Now
+              </button>
             </div>
           </div>
         </article>
@@ -552,11 +538,12 @@
           <div class="p-6">
             <span class="category-badge mb-3">Top Rated</span>
             <h3 class="text-xl font-semibold mb-2">TB-500 Vial</h3>
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">10mg thymosin beta-4 fragment for mobility and
-              recovery research protocols.</p>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
             <div class="flex items-center justify-between">
               <span class="text-2xl font-bold text-lime">$130</span>
-              <button class="btn-glow btn-glow-sm">Buy Now</button>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('TB-500 Vial')">
+                Buy Now
+              </button>
             </div>
           </div>
         </article>
@@ -568,11 +555,14 @@
           <div class="p-6">
             <span class="category-badge mb-3">New</span>
             <h3 class="text-xl font-semibold mb-2">GHK-Cu Vial</h3>
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">50mg copper peptide vial for collagen synthesis and
-              skin regeneration research.</p>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">
+              100mg Size
+            </p>
             <div class="flex items-center justify-between">
               <span class="text-2xl font-bold text-lime">$100</span>
-              <button class="btn-glow btn-glow-sm">Buy Now</button>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('GHK-Cu Vial')">
+                Buy Now
+              </button>
             </div>
           </div>
         </article>
@@ -584,453 +574,11 @@
   <!-- RESEARCH VIALS -->
   <!-- ========================================================= -->
 
-  <!-- Metabolic -->
-  <section id="metabolic" class="relative py-32 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-      <div class="text-center mb-16 reveal">
-        <span class="text-lime text-sm font-semibold uppercase tracking-widest">
-          Metabolic
-        </span>
-
-        <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
-          Metabolic Research
-        </h2>
-
-        <p class="text-white/50 max-w-2xl mx-auto text-lg">
-          Research compounds focused on metabolic pathways and body composition.
-        </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- AOD9604 -->
-        <article class="product-card reveal">
-          <div class="product-image-wrap">
-            <img src="img/aod9604.jpeg" alt="AOD9604" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">AOD9604</h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound presented for metabolic and body composition studies.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">Research Use Only</span>
-              <button class="btn-glow btn-glow-sm">View Details</button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- CJC + Ipamorelin Without DAC -->
-        <article class="product-card reveal reveal-delay-1">
-          <div class="product-image-wrap">
-            <img src="img/cjc-ipamorelin.jpeg" alt="CJC-1295 + Ipamorelin Without DAC" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              CJC + Ipamorelin
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              CJC-1295 and Ipamorelin research formulation without DAC.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">Without DAC</span>
-              <button class="btn-glow btn-glow-sm">View Details</button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- CJC + Ipamorelin With DAC -->
-        <article class="product-card reveal reveal-delay-2">
-          <div class="product-image-wrap">
-            <img src="img/cjc-ipamorelin2.jpeg" alt="CJC-1295 + Ipamorelin With DAC" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              CJC + Ipamorelin
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              CJC-1295 and Ipamorelin research formulation with DAC.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">With DAC</span>
-              <button class="btn-glow btn-glow-sm">View Details</button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- MOTS-C -->
-        <article class="product-card reveal">
-          <div class="product-image-wrap">
-            <img src="img/mots-c.jpeg" alt="MOTS-C" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">MOTS-C</h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Peptide research compound associated with mitochondrial research.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">Research Use Only</span>
-              <button class="btn-glow btn-glow-sm">View Details</button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- NAD -->
-        <article class="product-card reveal reveal-delay-1">
-          <div class="product-image-wrap">
-            <img src="img/nad.jpeg" alt="NAD" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">NAD</h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              NAD research material for cellular and metabolic research.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">Research Use Only</span>
-              <button class="btn-glow btn-glow-sm">View Details</button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- Retatrutide -->
-        <article class="product-card reveal reveal-delay-2">
-          <div class="product-image-wrap">
-            <img src="img/retatutride.jpeg" alt="Retatrutide" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Retatrutide</h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound for metabolic pathway research.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">Research Use Only</span>
-              <button class="btn-glow btn-glow-sm">View Details</button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- Tesamorelin -->
-        <article class="product-card reveal">
-          <div class="product-image-wrap">
-            <img src="img/tesamorelin.jpeg" alt="Tesamorelin" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Tesamorelin</h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound used in studies involving metabolic pathways.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">Research Use Only</span>
-              <button class="btn-glow btn-glow-sm">View Details</button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- Tirzepatide -->
-        <article class="product-card reveal reveal-delay-1">
-          <div class="product-image-wrap">
-            <img src="img/tirzepatide.jpeg" alt="Tirzepatide" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Tirzepatide</h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound for metabolic pathway studies.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">Research Use Only</span>
-              <button class="btn-glow btn-glow-sm">View Details</button>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Recovery & Performance -->
-  <section id="recovery" class="relative py-32 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-      <div class="text-center mb-16 reveal">
-        <span class="text-lime text-sm font-semibold uppercase tracking-widest">
-          Recovery & Performance
-        </span>
-
-        <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
-          Recovery & Performance Research
-        </h2>
-
-        <p class="text-white/50 max-w-2xl mx-auto text-lg">
-          Research compounds focused on recovery, performance, and related biological pathways.
-        </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- BPC-157 -->
-        <article class="product-card reveal">
-          <div class="product-image-wrap">
-            <img src="img/bpc-157.jpeg" alt="BPC-157" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              BPC-157
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound studied in recovery and biological pathway research.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
-              </button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- BPC-157 + TB-500 -->
-        <article class="product-card reveal reveal-delay-1">
-          <div class="product-image-wrap">
-            <img src="img/bpc157-tb500.jpeg" alt="BPC-157 + TB-500" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              BPC-157 + TB-500
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research formulation combining BPC-157 and TB-500 for recovery-related studies.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
-              </button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- TB-500 -->
-        <article class="product-card reveal reveal-delay-2">
-          <div class="product-image-wrap">
-            <img src="img/tb500.jpeg" alt="TB-500" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              TB-500
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound studied in recovery and tissue-related research.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
-              </button>
-            </div>
-          </div>
-        </article>
-
-
-        <!-- SS-31 -->
-        <article class="product-card reveal">
-          <div class="product-image-wrap">
-            <img src="img/ss31.jpeg" alt="SS-31" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              SS-31
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound associated with mitochondrial and cellular research.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
-              </button>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Skin & Aesthetic -->
-  <section id="skin" class="relative py-32 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-      <div class="text-center mb-16 reveal">
-        <span class="text-lime text-sm font-semibold uppercase tracking-widest">
-          Skin & Aesthetic
-        </span>
-
-        <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
-          Skin & Aesthetic Research
-        </h2>
-
-        <p class="text-white/50 max-w-2xl mx-auto text-lg">
-          Research compounds focused on skin, cosmetic and aesthetic research.
-        </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- GHK-Cu -->
-        <article class="product-card reveal">
-
-          <div class="product-image-wrap">
-            <img src="img/ghk-cu.jpeg" alt="GHK-Cu" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              GHK-Cu
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound associated with skin and cosmetic research.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
-              </button>
-            </div>
-          </div>
-
-        </article>
-
-
-        <!-- Glow -->
-        <article class="product-card reveal reveal-delay-1">
-
-          <div class="product-image-wrap">
-            <img src="img/glow.jpeg" alt="Glow" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              Glow
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research formulation focused on skin and aesthetic research.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
-              </button>
-            </div>
-          </div>
-
-        </article>
-
-
-        <!-- BBG70-Glow -->
-        <article class="product-card reveal reveal-delay-2">
-
-          <div class="product-image-wrap">
-            <img src="img/bbg70-glow.jpeg" alt="BBG70-Glow" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              BBG70-Glow
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research formulation presented for skin and aesthetic studies.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
-              </button>
-            </div>
-          </div>
-
-        </article>
-
-      </div>
-    </div>
-  </section>
-
+  <!-- ========================================================= -->
   <!-- Cognitive & Neuro -->
+  <!-- ========================================================= -->
   <section id="cognitive" class="relative py-32 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
       <!-- Section Header -->
       <div class="text-center mb-16 reveal">
         <span class="text-lime text-sm font-semibold uppercase tracking-widest">
@@ -1040,78 +588,446 @@
         <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
           Cognitive & Neuro Research
         </h2>
+      </div>
 
-        <p class="text-white/50 max-w-2xl mx-auto text-lg">
-          Research compounds focused on cognitive and neurological research.
-        </p>
+      <!-- Products Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Selank -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/selank.jpeg" alt="Selank Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span>-->
+            <h3 class="text-xl font-semibold mb-2">Selank Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$110</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('Selank')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Semax -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/semax.jpeg" alt="Semax Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">Semax Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$110</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('Semax')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kisspeptin -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/kisspeptin-10.jpeg" alt="Kisspeptin Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">Kisspeptin-10 Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$140</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('Kisspeptin-10 Vial')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- METABOLIC -->
+  <!-- ========================================================= -->
+  <section id="metabolic" class="relative py-32 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <span class="text-lime text-sm font-semibold uppercase tracking-widest">
+          Metabolic
+        </span>
+
+        <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
+          Metabolic & Body Composition Research
+        </h2>
       </div>
 
       <!-- Products Grid -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- Selank -->
-        <article class="product-card reveal">
+        <!-- AOD9604 -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
           <div class="product-image-wrap">
-            <img src="img/selank.jpeg" alt="Selank" class="product-image" />
+            <img src="img/aod9604.jpeg" alt="AOD9604" class="product-image" />
           </div>
-
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              Selank
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound studied in experimental cognitive and neurological research.
-            </p>
-
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">AOD9604 Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
             <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
+              <span class="text-2xl font-bold text-lime">$120</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('AOD9604')">
+                Buy Now
               </button>
             </div>
           </div>
         </article>
 
-
-        <!-- Semax -->
-        <article class="product-card reveal reveal-delay-1">
+        <!-- CJC + Ipamorelin Without DAC -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
           <div class="product-image-wrap">
-            <img src="img/semax.jpeg" alt="Semax" class="product-image" />
+            <img src="img/cjc-ipamorelin.jpeg" alt="CJC-1295 + Ipamorelin Without DAC" class="product-image" />
           </div>
-
           <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
             <h3 class="text-xl font-semibold mb-2">
-              Semax
+              CJC + Ipamorelin Without DAC Vial
             </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound studied in experimental cognitive and neurological research.
-            </p>
-
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
             <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
+              <span class="text-2xl font-bold text-lime">$120</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('CJC + Ipamorelin Without DAC')">
+                Buy Now
               </button>
             </div>
           </div>
         </article>
 
+        <!-- CJC + Ipamorelin With DAC -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/cjc-ipamorelin2.jpeg" alt="CJC-1295 + Ipamorelin With DAC" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">
+              CJC + Ipamorelin With DAC Vial
+            </h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$120</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('CJC + Ipamorelin With DAC')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- MOTS-C -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/mots-c.jpeg" alt="MOTS-C Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">MOTS-C Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$130</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('MOTS-C')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tesamorelin -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/tesamorelin.jpeg" alt="Tesamorelin Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">Tesamorelin Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$140</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('Tesamorelin')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Hormonal & Reproductive -->
+  <!-- ========================================================= -->
+  <!-- SKIN -->
+  <!-- ========================================================= -->
+  <section id="skin" class="relative py-32 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <span class="text-lime text-sm font-semibold uppercase tracking-widest">
+          Skin, Beauty & Longevity
+        </span>
+
+        <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
+          Skin, Beauty & Longevity Research
+        </h2>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- GHK-Cu -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/ghk-cu.jpeg" alt="GHK-Cu Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">GHK-Cu Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">
+              100mg Size
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$100</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('GHK-Cu')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Glow -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/glow.jpeg" alt="Glow Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">Glow Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">80mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$190</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('Glow')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- KLOW 
+        <article class="product-card reveal reveal-delay-2">
+
+          <div class="product-image-wrap">
+            <img src="img/klow.jpeg" alt="KLOW" class="product-image" />
+          </div>
+
+          <div class="p-6">
+
+            <h3 class="text-xl font-semibold mb-2">
+              KLOW
+            </h3>
+
+            <p class="text-white/50 text-sm mb-4 leading-relaxed">
+              Research formulation presented for skin, beauty and aesthetic studies.
+            </p>
+
+            <div class="flex items-center justify-between">
+
+              <span class="text-sm text-white/40">
+                Research Use Only
+              </span>
+
+              <button class="btn-glow btn-glow-sm">
+                View Details
+              </button>
+
+            </div>
+
+          </div>
+
+        </article> -->
+
+        <!-- BBG70-GLOW -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/bbg70-glow.jpeg" alt="BBG70-GLOW Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">BBG70-GLOW Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">70mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$165</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('BBG70-GLOW')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Glutathione 
+        <article class="product-card reveal reveal-delay-1">
+
+          <div class="product-image-wrap">
+            <img src="img/glutathione.jpeg" alt="Glutathione" class="product-image" />
+          </div>
+
+          <div class="p-6">
+
+            <h3 class="text-xl font-semibold mb-2">
+              Glutathione
+            </h3>
+
+            <p class="text-white/50 text-sm mb-4 leading-relaxed">
+              Research compound presented for skin, beauty and longevity research.
+            </p>
+
+            <div class="flex items-center justify-between">
+
+              <span class="text-sm text-white/40">
+                Research Use Only
+              </span>
+
+              <button class="btn-glow btn-glow-sm">
+                View Details
+              </button>
+
+            </div>
+
+          </div>
+
+        </article> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- RECOVERY & PERFORMANCE -->
+  <!-- ========================================================= -->
+  <section id="recovery" class="relative py-32 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16 reveal">
+        <span class="text-lime text-sm font-semibold uppercase tracking-widest">
+          Recovery & Performance
+        </span>
+
+        <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
+          Recovery & Performance Research
+        </h2>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- BPC-157 -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/bpc-157.jpeg" alt="BPC-157 Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">BPC-157 Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$120</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('BPC-157')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- BPC-157 + TB-500 -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/bpc157-tb500.jpeg" alt="BPC-157 + TB-500 Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">BPC-157 + TB-500 Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$125</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('BPC-157 + TB-500')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- TB-500 -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/tb500.jpeg" alt="TB-500 Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">TB-500 Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$130</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('TB-500')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Wolverine -->
+        <!-- Add this only if you have a Wolverine vial -->
+        <!--
+      <article class="product-card reveal">
+
+        <div class="product-image-wrap">
+          <img
+            src="img/wolverine.jpeg"
+            alt="Wolverine"
+            class="product-image"
+          />
+        </div>
+
+        <div class="p-6">
+
+          <h3 class="text-xl font-semibold mb-2">
+            Wolverine
+          </h3>
+
+          <p class="text-white/50 text-sm mb-4 leading-relaxed">
+            Research formulation presented for recovery and performance-related studies.
+          </p>
+
+          <div class="flex items-center justify-between">
+
+            <span class="text-sm text-white/40">
+              Research Use Only
+            </span>
+
+            <button class="btn-glow btn-glow-sm">
+              View Details
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+      -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- HORMONAL & REPRODUCTIVE -->
+  <!-- ========================================================= -->
   <section id="hormonal" class="relative py-32 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
       <!-- Section Header -->
       <div class="text-center mb-16 reveal">
         <span class="text-lime text-sm font-semibold uppercase tracking-widest">
@@ -1121,239 +1037,206 @@
         <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
           Hormonal & Reproductive Research
         </h2>
-
-        <p class="text-white/50 max-w-2xl mx-auto text-lg">
-          Research compounds focused on hormonal and reproductive research.
-        </p>
       </div>
 
       <!-- Products Grid -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- HCG 5000 -->
-        <article class="product-card reveal">
+        <!-- HCG 5000 
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
           <div class="product-image-wrap">
             <img src="img/hcg5000.jpeg" alt="HCG 5000" class="product-image" />
           </div>
-
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              HCG 5000
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research material presented for experimental hormonal and reproductive studies.
+            <span class="category-badge mb-3">New</span> 
+            <h3 class="text-xl font-semibold mb-2">HCG 5000 Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">
+              5000 IU Size
             </p>
-
             <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
+              <span class="text-2xl font-bold text-lime">$##</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('HCG 5000')">
+                Buy Now
               </button>
             </div>
           </div>
-        </article>
-
+        </article> -->
 
         <!-- Kisspeptin-10 -->
-        <article class="product-card reveal reveal-delay-1">
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
           <div class="product-image-wrap">
             <img src="img/kisspeptin-10.jpeg" alt="Kisspeptin-10" class="product-image" />
           </div>
-
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              Kisspeptin-10
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound studied in experimental hormonal and reproductive research.
-            </p>
-
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">Kisspeptin-10 Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
             <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
+              <span class="text-2xl font-bold text-lime">$115</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('Kisspeptin-10')">
+                Buy Now
               </button>
             </div>
           </div>
         </article>
 
-
         <!-- PT-141 -->
-        <article class="product-card reveal reveal-delay-2">
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
           <div class="product-image-wrap">
             <img src="img/pt141.jpeg" alt="PT-141" class="product-image" />
           </div>
-
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              PT-141
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound presented for experimental reproductive and physiological studies.
-            </p>
-
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">PT-141 Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
             <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
+              <span class="text-2xl font-bold text-lime">$110</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('PT-141')">
+                Buy Now
               </button>
             </div>
           </div>
         </article>
-
-
-        <!-- Ipamorelin -->
-        <article class="product-card reveal">
-          <div class="product-image-wrap">
-            <img src="img/ipamorelin.jpeg" alt="Ipamorelin" class="product-image" />
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              Ipamorelin
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research compound studied in experimental peptide and hormonal pathway research.
-            </p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
-              </button>
-            </div>
-          </div>
-        </article>
-
       </div>
     </div>
   </section>
 
-  <!-- Sleep & Wellness -->
-  <section id="sleep" class="relative py-32 border-t border-white/5">
+  <!-- ========================================================= -->
+  <!-- CELLULAR & WELLNESS -->
+  <!-- ========================================================= -->
+  <section id="cellular" class="relative py-32 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
       <!-- Section Header -->
       <div class="text-center mb-16 reveal">
         <span class="text-lime text-sm font-semibold uppercase tracking-widest">
-          Sleep & Wellness
+          Cellular & Wellness Support
         </span>
 
         <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
-          Sleep & Wellness Research
+          Cellular & Wellness Research
         </h2>
-
-        <p class="text-white/50 max-w-2xl mx-auto text-lg">
-          Research compounds focused on sleep, recovery and wellness-related studies.
-        </p>
       </div>
 
       <!-- Products Grid -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- NAD+ -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
+          <div class="product-image-wrap">
+            <img src="img/nad.jpeg" alt="NAD+ Research Vial" class="product-image" />
+          </div>
+          <div class="p-6">
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">NAD+ Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">
+              500mg Size
+            </p>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl font-bold text-lime">$120</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('NAD+')">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- B12
+        <article class="product-card reveal reveal-delay-1">
+
+          <div class="product-image-wrap">
+            <img src="img/b12.jpeg" alt="B12" class="product-image" />
+          </div>
+
+          <div class="p-6">
+
+            <h3 class="text-xl font-semibold mb-2">
+              B12
+            </h3>
+
+            <p class="text-white/50 text-sm mb-4 leading-relaxed">
+              Research material presented for cellular and wellness-related studies.
+            </p>
+
+            <div class="flex items-center justify-between">
+
+              <span class="text-sm text-white/40">
+                Research Use Only
+              </span>
+
+              <button class="btn-glow btn-glow-sm">
+                View Details
+              </button>
+
+            </div>
+
+          </div>
+
+        </article> -->
 
         <!-- Melatonin -->
-        <article class="product-card reveal">
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
           <div class="product-image-wrap">
             <img src="img/melatonin.jpeg" alt="Melatonin" class="product-image" />
           </div>
-
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              Melatonin
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research material presented for experimental sleep and circadian rhythm studies.
-            </p>
-
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">Melatonin Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">10mg Size</p>
             <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
+              <span class="text-2xl font-bold text-lime">$95</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('Melatonin')">
+                Buy Now
               </button>
             </div>
           </div>
         </article>
-
       </div>
     </div>
   </section>
 
-  <!-- Research Supplies -->
+  <!-- ========================================================= -->
+  <!-- RECONSTITUTION SUPPLIES -->
+  <!-- ========================================================= -->
+
+  <!-- Reconstitution Supplies -->
   <section id="supplies" class="relative py-32 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
       <!-- Section Header -->
       <div class="text-center mb-16 reveal">
         <span class="text-lime text-sm font-semibold uppercase tracking-widest">
-          Research Supplies
+          Reconstitution Supplies
         </span>
 
         <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight">
-          Research Supplies
+          Reconstitution Supplies
         </h2>
-
-        <p class="text-white/50 max-w-2xl mx-auto text-lg">
-          Supporting materials and supplies for laboratory research and experimental work.
-        </p>
       </div>
 
       <!-- Products Grid -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- Bac Water -->
-        <article class="product-card reveal">
+        <!-- Bacteriostatic Water -->
+        <article class="product-card reveal reveal-delay-2 ring-1 ring-lime/20">
           <div class="product-image-wrap">
-            <img src="img/bacwater.jpeg" alt="Bac Water" class="product-image" />
+            <img src="img/bacwater.jpeg" alt="Bacteriostatic Water" class="product-image" />
           </div>
-
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">
-              Bac Water
-            </h3>
-
-            <p class="text-white/50 text-sm mb-4 leading-relaxed">
-              Research supply intended for laboratory and experimental applications.
+            <!--<span class="category-badge mb-3">New</span> -->
+            <h3 class="text-xl font-semibold mb-2">Bacteriostatic Water Vial</h3>
+            <p class="text-white/50 text-m mb-4 leading-relaxed">
+              3mL - 10mL Size
             </p>
-
             <div class="flex items-center justify-between">
-              <span class="text-sm text-white/40">
-                Research Use Only
-              </span>
-
-              <button class="btn-glow btn-glow-sm">
-                View Details
+              <span class="text-2xl font-bold text-lime">$10</span>
+              <button class="btn-glow btn-glow-sm" onclick="contactWhatsApp('Bacteriostatic Water Vial')">
+                Buy Now
               </button>
             </div>
           </div>
         </article>
-
       </div>
     </div>
   </section>
 
   <!-- ===== The Science / Research Section ===== -->
   <section id="research" class="relative py-32 border-t border-white/5 overflow-hidden">
-
     <!-- Background Glow -->
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute left-1/4 top-1/3 w-96 h-96 rounded-full bg-lime/5 blur-[120px]"></div>
@@ -1361,56 +1244,46 @@
     </div>
 
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
-
       <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-
         <!-- ===== Research Visualization ===== -->
         <div class="reveal">
-
           <div class="relative h-[520px] rounded-3xl border border-white/10 bg-white/[0.02] overflow-hidden">
-
             <!-- Grid -->
             <div class="absolute inset-0 opacity-30" style="
-              background-image:
-                linear-gradient(rgba(198,255,61,0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(198,255,61,0.08) 1px, transparent 1px);
-              background-size: 45px 45px;
-            ">
-            </div>
+                  background-image:
+                    linear-gradient(
+                      rgba(198, 255, 61, 0.08) 1px,
+                      transparent 1px
+                    ),
+                    linear-gradient(
+                      90deg,
+                      rgba(198, 255, 61, 0.08) 1px,
+                      transparent 1px
+                    );
+                  background-size: 45px 45px;
+                "></div>
 
             <!-- Scientific Circles -->
             <div class="absolute inset-0 flex items-center justify-center">
-
               <div class="relative w-[360px] h-[360px] rounded-full border border-lime/20">
-
                 <div class="absolute inset-[65px] rounded-full border border-lime/25"></div>
 
                 <div class="absolute inset-[130px] rounded-full border border-lime/30"></div>
 
                 <!-- Center -->
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                          w-5 h-5 rounded-full bg-lime/30 shadow-[0_0_25px_rgba(198,255,61,0.4)]">
+                <div
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-lime/30 shadow-[0_0_25px_rgba(198,255,61,0.4)]">
                 </div>
 
                 <!-- Research Nodes -->
-                <div class="absolute top-[55px] left-1/2 -translate-x-1/2
-                          w-3 h-3 rounded-full bg-lime/50">
-                </div>
+                <div class="absolute top-[55px] left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-lime/50"></div>
 
-                <div class="absolute top-1/2 right-[45px] -translate-y-1/2
-                          w-3 h-3 rounded-full bg-lime/40">
-                </div>
+                <div class="absolute top-1/2 right-[45px] -translate-y-1/2 w-3 h-3 rounded-full bg-lime/40"></div>
 
-                <div class="absolute bottom-[75px] left-[90px]
-                          w-3 h-3 rounded-full bg-lime/30">
-                </div>
+                <div class="absolute bottom-[75px] left-[90px] w-3 h-3 rounded-full bg-lime/30"></div>
 
-                <div class="absolute bottom-[50px] right-[100px]
-                          w-2.5 h-2.5 rounded-full bg-lime/30">
-                </div>
-
+                <div class="absolute bottom-[50px] right-[100px] w-2.5 h-2.5 rounded-full bg-lime/30"></div>
               </div>
-
             </div>
 
             <!-- Label -->
@@ -1422,20 +1295,13 @@
 
             <!-- Bottom Info Card -->
             <div class="absolute bottom-5 left-5 right-5">
-
               <div class="rounded-2xl border border-white/10 bg-black/30 backdrop-blur-xl p-5">
-
                 <div class="flex items-center gap-4">
-
                   <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-lime/10 text-lime">
-
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-
                       <path stroke-linecap="round" stroke-linejoin="round"
                         d="M9 3h6m-5 0v5.5L5.5 18a2 2 0 0 0 1.7 3h9.6a2 2 0 0 0 1.7-3L14 8.5V3M8 13h8" />
-
                     </svg>
-
                   </div>
 
                   <div>
@@ -1447,21 +1313,14 @@
                       Focused on identity, purity, and consistency.
                     </p>
                   </div>
-
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
 
         <!-- ===== Science Content ===== -->
         <div class="reveal reveal-delay-1">
-
           <span class="text-lime text-sm font-semibold uppercase tracking-widest">
             The Science
           </span>
@@ -1472,28 +1331,20 @@
           </h2>
 
           <p class="text-white/50 text-lg leading-relaxed mb-8">
-            Every PEP-V Labs vial is selected with research in mind.
-            Our collection brings together compounds studied across
-            metabolic, recovery, cognitive, hormonal, sleep, and
-            aesthetic research.
+            Every PEP-V Labs vial is selected with research in mind. Our
+            collection brings together compounds studied across metabolic,
+            recovery, cognitive, hormonal, sleep, and aesthetic research.
           </p>
-
 
           <!-- Features -->
           <div class="space-y-5">
-
             <!-- Feature 1 -->
             <div class="flex items-start gap-4">
-
-              <div class="flex-shrink-0 w-6 h-6 rounded-full border border-lime/40
-                        flex items-center justify-center text-lime mt-0.5">
-
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full border border-lime/40 flex items-center justify-center text-lime mt-0.5">
                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-
                   <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6" />
-
                 </svg>
-
               </div>
 
               <div>
@@ -1505,22 +1356,15 @@
                   Compounds organized by their primary research focus.
                 </p>
               </div>
-
             </div>
-
 
             <!-- Feature 2 -->
             <div class="flex items-start gap-4">
-
-              <div class="flex-shrink-0 w-6 h-6 rounded-full border border-lime/40
-                        flex items-center justify-center text-lime mt-0.5">
-
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full border border-lime/40 flex items-center justify-center text-lime mt-0.5">
                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-
                   <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6" />
-
                 </svg>
-
               </div>
 
               <div>
@@ -1529,26 +1373,19 @@
                 </h3>
 
                 <p class="text-sm text-white/40 mt-1">
-                  Product presentation designed around research-grade
-                  quality and consistency.
+                  Product presentation designed around research-grade quality
+                  and consistency.
                 </p>
               </div>
-
             </div>
-
 
             <!-- Feature 3 -->
             <div class="flex items-start gap-4">
-
-              <div class="flex-shrink-0 w-6 h-6 rounded-full border border-lime/40
-                        flex items-center justify-center text-lime mt-0.5">
-
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full border border-lime/40 flex items-center justify-center text-lime mt-0.5">
                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-
                   <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6" />
-
                 </svg>
-
               </div>
 
               <div>
@@ -1557,26 +1394,19 @@
                 </h3>
 
                 <p class="text-sm text-white/40 mt-1">
-                  Clear compound names, formulations, and product
-                  information across the collection.
+                  Clear compound names, formulations, and product information
+                  across the collection.
                 </p>
               </div>
-
             </div>
-
 
             <!-- Feature 4 -->
             <div class="flex items-start gap-4">
-
-              <div class="flex-shrink-0 w-6 h-6 rounded-full border border-lime/40
-                        flex items-center justify-center text-lime mt-0.5">
-
+              <div
+                class="flex-shrink-0 w-6 h-6 rounded-full border border-lime/40 flex items-center justify-center text-lime mt-0.5">
                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-
                   <path stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6" />
-
                 </svg>
-
               </div>
 
               <div>
@@ -1585,48 +1415,32 @@
                 </h3>
 
                 <p class="text-sm text-white/40 mt-1">
-                  Products are presented exclusively for laboratory
-                  and research applications.
+                  Products are presented exclusively for laboratory and
+                  research applications.
                 </p>
               </div>
-
             </div>
-
           </div>
-
 
           <!-- CTA -->
           <div class="mt-10">
-
-            <a href="#vials" class="inline-flex items-center gap-3 rounded-full border border-white/10
-                   px-7 py-3.5 text-sm font-semibold text-white
-                   transition-all duration-300 hover:border-lime/30
-                   hover:bg-lime/5">
-
+            <a href="#vials"
+              class="inline-flex items-center gap-3 rounded-full border border-white/10 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:border-lime/30 hover:bg-lime/5">
               Explore Research Vials
 
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6" />
-
               </svg>
-
             </a>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- ===== About Us Section ===== -->
   <section id="about" class="relative py-32 border-t border-white/5 overflow-hidden">
-
     <!-- Background Glow -->
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute left-1/4 top-0 w-96 h-96 rounded-full bg-lime/5 blur-[120px]"></div>
@@ -1634,10 +1448,8 @@
     </div>
 
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
-
       <!-- Header -->
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-
         <span class="text-lime text-sm font-semibold uppercase tracking-widest">
           About Us
         </span>
@@ -1652,29 +1464,18 @@
           presentation. Our collection brings together research compounds
           organized by their primary research focus.
         </p>
-
       </div>
-
 
       <!-- Difference Cards -->
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-
         <!-- Research Focused -->
-        <div class="group rounded-3xl border border-white/10 bg-white/[0.02]
-                  p-7 transition-all duration-300
-                  hover:border-lime/20 hover:bg-lime/[0.02] reveal">
-
-          <div class="mb-6 flex h-11 w-11 items-center justify-center
-                    rounded-xl bg-lime/10 text-lime
-                    border border-lime/10">
-
+        <div
+          class="group rounded-3xl border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 hover:border-lime/20 hover:bg-lime/[0.02] reveal">
+          <div
+            class="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-lime/10 text-lime border border-lime/10">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7Z" />
-
             </svg>
-
           </div>
 
           <h3 class="text-lg font-semibold text-white mb-3">
@@ -1682,29 +1483,20 @@
           </h3>
 
           <p class="text-sm text-white/40 leading-relaxed">
-            Compounds organized by metabolic, recovery, cognitive,
-            hormonal, sleep, and aesthetic research focus.
+            Compounds organized by metabolic, recovery, cognitive, hormonal,
+            sleep, and aesthetic research focus.
           </p>
-
         </div>
 
-
         <!-- Clear Formulations -->
-        <div class="group rounded-3xl border border-white/10 bg-white/[0.02]
-                  p-7 transition-all duration-300
-                  hover:border-lime/20 hover:bg-lime/[0.02] reveal reveal-delay-1">
-
-          <div class="mb-6 flex h-11 w-11 items-center justify-center
-                    rounded-xl bg-lime/10 text-lime
-                    border border-lime/10">
-
+        <div
+          class="group rounded-3xl border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 hover:border-lime/20 hover:bg-lime/[0.02] reveal reveal-delay-1">
+          <div
+            class="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-lime/10 text-lime border border-lime/10">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M9 3h6m-5 0v5.5L5.5 18a2 2 0 0 0 1.7 3h9.6a2 2 0 0 0 1.7-3L14 8.5V3M8 13h8" />
-
             </svg>
-
           </div>
 
           <h3 class="text-lg font-semibold text-white mb-3">
@@ -1712,31 +1504,22 @@
           </h3>
 
           <p class="text-sm text-white/40 leading-relaxed">
-            Transparent presentation of compound names, formulations,
-            and available vial information across the collection.
+            Transparent presentation of compound names, formulations, and
+            available vial information across the collection.
           </p>
-
         </div>
 
-
         <!-- Quality Standards -->
-        <div class="group rounded-3xl border border-white/10 bg-white/[0.02]
-                  p-7 transition-all duration-300
-                  hover:border-lime/20 hover:bg-lime/[0.02] reveal reveal-delay-2">
-
-          <div class="mb-6 flex h-11 w-11 items-center justify-center
-                    rounded-xl bg-lime/10 text-lime
-                    border border-lime/10">
-
+        <div
+          class="group rounded-3xl border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 hover:border-lime/20 hover:bg-lime/[0.02] reveal reveal-delay-2">
+          <div
+            class="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-lime/10 text-lime border border-lime/10">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4Z" />
 
               <path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4" />
-
             </svg>
-
           </div>
 
           <h3 class="text-lg font-semibold text-white mb-3">
@@ -1744,31 +1527,22 @@
           </h3>
 
           <p class="text-sm text-white/40 leading-relaxed">
-            Product presentation centered around purity, consistency,
-            and research-grade materials.
+            Product presentation centered around purity, consistency, and
+            research-grade materials.
           </p>
-
         </div>
 
-
         <!-- Research Use Only -->
-        <div class="group rounded-3xl border border-white/10 bg-white/[0.02]
-                  p-7 transition-all duration-300
-                  hover:border-lime/20 hover:bg-lime/[0.02] reveal reveal-delay-3">
-
-          <div class="mb-6 flex h-11 w-11 items-center justify-center
-                    rounded-xl bg-lime/10 text-lime
-                    border border-lime/10">
-
+        <div
+          class="group rounded-3xl border border-white/10 bg-white/[0.02] p-7 transition-all duration-300 hover:border-lime/20 hover:bg-lime/[0.02] reveal reveal-delay-3">
+          <div
+            class="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-lime/10 text-lime border border-lime/10">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4Z" />
 
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6M12 9v6" />
-
             </svg>
-
           </div>
 
           <h3 class="text-lg font-semibold text-white mb-3">
@@ -1776,147 +1550,82 @@
           </h3>
 
           <p class="text-sm text-white/40 leading-relaxed">
-            Products are presented exclusively for laboratory
-            and research applications.
+            Products are presented exclusively for laboratory and research
+            applications.
           </p>
-
         </div>
-
       </div>
-
 
       <!-- Bottom Statement -->
       <div class="mt-16 text-center reveal">
-
         <p class="text-sm text-white/30">
           Precision. Transparency. Research.
         </p>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- ===== Footer ===== -->
   <footer class="relative border-t border-white/5 bg-dark overflow-hidden">
-
     <!-- Background Glow -->
     <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute left-1/4 bottom-0 w-96 h-96 rounded-full bg-lime/5 blur-[140px]"></div>
 
-      <div class="absolute left-1/4 bottom-0
-                w-96 h-96 rounded-full
-                bg-lime/5 blur-[140px]">
-      </div>
-
-      <div class="absolute right-0 top-0
-                w-80 h-80 rounded-full
-                bg-lime/5 blur-[140px]">
-      </div>
-
+      <div class="absolute right-0 top-0 w-80 h-80 rounded-full bg-lime/5 blur-[140px]"></div>
     </div>
 
-
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
-
-
       <!-- ===== Main Footer ===== -->
       <div class="grid gap-14 lg:grid-cols-[1.3fr_2fr_1.3fr]">
-
-
         <!-- ===== Brand ===== -->
         <div>
-
           <!-- Logo -->
           <a href="#home" class="inline-flex items-center gap-3 group">
-
-            <div class="flex h-10 w-10 items-center justify-center
-                      rounded-xl border border-lime/20
-                      bg-lime/5 text-lime
-                      transition-all duration-300
-                      group-hover:border-lime/40
-                      group-hover:bg-lime/10">
-
-              <span class="text-xs font-bold leading-none">
-                PEP-<br>V
-              </span>
-
+            <div
+              class="flex h-10 w-10 items-center justify-center rounded-xl border border-lime/20 bg-lime/5 text-lime transition-all duration-300 group-hover:border-lime/40 group-hover:bg-lime/10">
+              <span class="text-xs font-bold leading-none"> PV </span>
             </div>
 
             <span class="text-lg font-semibold tracking-tight text-white">
               PEP-V Labs
             </span>
-
           </a>
-
 
           <!-- Description -->
           <p class="mt-6 max-w-xs text-sm leading-relaxed text-white/40">
-
-            Research-focused compounds presented with
-            precision, transparency, and consistency.
-
+            Research-focused compounds presented with precision, transparency,
+            and consistency.
           </p>
-
 
           <!-- Socials -->
           <div class="mt-7 flex items-center gap-3">
-
-
             <!-- X -->
-            <a href="#" aria-label="X" class="flex h-10 w-10 items-center justify-center
-                    rounded-xl border border-white/10
-                    text-white/40
-                    transition-all duration-300
-                    hover:border-lime/30
-                    hover:bg-lime/5
-                    hover:text-lime">
-
+            <a href="#" aria-label="X"
+              class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white/40 transition-all duration-300 hover:border-lime/30 hover:bg-lime/5 hover:text-lime">
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-
                 <path d="M18.244 2.25h3.308l-7.227 8.26
                        8.502 11.24H16.17l-5.214-6.817
                        L4.99 21.75H1.68l7.73-8.835L1.254
                        2.25H8.08l4.713 6.231 5.45-6.231Z" />
-
               </svg>
-
             </a>
 
-
             <!-- Instagram -->
-            <a href="#" aria-label="Instagram" class="flex h-10 w-10 items-center justify-center
-                    rounded-xl border border-white/10
-                    text-white/40
-                    transition-all duration-300
-                    hover:border-lime/30
-                    hover:bg-lime/5
-                    hover:text-lime">
-
+            <a href="#" aria-label="Instagram"
+              class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white/40 transition-all duration-300 hover:border-lime/30 hover:bg-lime/5 hover:text-lime">
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-
                 <rect x="3" y="3" width="18" height="18" rx="5" />
 
                 <circle cx="12" cy="12" r="4" />
 
                 <circle cx="17.5" cy="6.5" r=".5" fill="currentColor" />
-
               </svg>
-
             </a>
 
-
             <!-- LinkedIn -->
-            <a href="#" aria-label="LinkedIn" class="flex h-10 w-10 items-center justify-center
-                    rounded-xl border border-white/10
-                    text-white/40
-                    transition-all duration-300
-                    hover:border-lime/30
-                    hover:bg-lime/5
-                    hover:text-lime">
-
+            <a href="#" aria-label="LinkedIn"
+              class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 text-white/40 transition-all duration-300 hover:border-lime/30 hover:bg-lime/5 hover:text-lime">
               <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-
                 <path d="M6.5 8.5H3V21h3.5V8.5ZM4.75
                        3A2.05 2.05 0 1 0 4.75 7.1
                        2.05 2.05 0 0 0 4.75 3ZM21
@@ -1924,171 +1633,130 @@
                        -2.14 0-3.1 1.18-3.63 2v-1.75H9.2V21h3.5v-6.18
                        c0-1.63.31-3.21 2.33-3.21
                        1.99 0 2.02 1.86 2.02 3.32V21H21v-7.25Z" />
-
               </svg>
-
             </a>
-
           </div>
-
         </div>
-
-
 
         <!-- ===== Navigation ===== -->
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-10">
-
-
           <!-- Research -->
           <div>
-
-            <h3 class="text-sm font-semibold text-white">
-              Research
-            </h3>
+            <h3 class="text-sm font-semibold text-white">Research</h3>
 
             <ul class="mt-5 space-y-3">
-
               <li>
-                <a href="#vials" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
+                <a href="#vials" class="text-sm text-white/40 transition-colors hover:text-lime">
                   All Vials
                 </a>
               </li>
 
               <li>
-                <a href="#metabolic" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
-                  Metabolic
-                </a>
-              </li>
-
-              <li>
-                <a href="#recovery" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
-                  Recovery
-                </a>
-              </li>
-
-              <li>
-                <a href="#cognitive" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
+                <a href="#cognitive" class="text-sm text-white/40 transition-colors hover:text-lime">
                   Cognitive
                 </a>
               </li>
 
               <li>
-                <a href="#hormonal" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
-                  Hormonal
+                <a href="#metabolic" class="text-sm text-white/40 transition-colors hover:text-lime">
+                  Metabolic
                 </a>
               </li>
 
               <li>
-                <a href="#sleep" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
-                  Sleep
+                <a href="#skin" class="text-sm text-white/40 transition-colors hover:text-lime">
+                  Skin & Beauty
                 </a>
               </li>
 
+              
+
+              <li>
+                <a href="#recovery" class="text-sm text-white/40 transition-colors hover:text-lime">
+                  Recovery
+                </a>
+              </li>
+
+              <li>
+                <a href="#hormonal" class="text-sm text-white/40 transition-colors hover:text-lime">
+                  Hormonal & Reproductive
+                </a>
+              </li>
+
+              <li>
+                <a href="#cellular" class="text-sm text-white/40 transition-colors hover:text-lime">
+                  Cellular & Wellness
+                </a>
+              </li>
+
+              <li>
+                <a href="#supplies" class="text-sm text-white/40 transition-colors hover:text-lime">
+                  Reconstitution Supplies
+                </a>
+              </li>
             </ul>
-
           </div>
-
-
 
           <!-- Company -->
           <div>
-
-            <h3 class="text-sm font-semibold text-white">
-              Company
-            </h3>
+            <h3 class="text-sm font-semibold text-white">Company</h3>
 
             <ul class="mt-5 space-y-3">
-
               <li>
-                <a href="#about" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
+                <a href="#about" class="text-sm text-white/40 transition-colors hover:text-lime">
                   About Us
                 </a>
               </li>
 
               <li>
-                <a href="#research" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
+                <a href="#research" class="text-sm text-white/40 transition-colors hover:text-lime">
                   Our Science
                 </a>
               </li>
 
               <li>
-                <a href="#blog" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
-                  Blog
-                </a>
-              </li>
-
-              <li>
-                <a href="#research" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
+                <a href="#research" class="text-sm text-white/40 transition-colors hover:text-lime">
                   Research
                 </a>
               </li>
-
             </ul>
-
           </div>
-
-
 
           <!-- Support -->
           <div>
-
-            <h3 class="text-sm font-semibold text-white">
-              Support
-            </h3>
+            <h3 class="text-sm font-semibold text-white">Support</h3>
 
             <ul class="mt-5 space-y-3">
-
               <li>
-                <a href="#" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
+                <a href="#" class="text-sm text-white/40 transition-colors hover:text-lime">
                   Contact Us
                 </a>
               </li>
 
               <li>
-                <a href="#" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
+                <a href="#" class="text-sm text-white/40 transition-colors hover:text-lime">
                   Shipping
                 </a>
               </li>
 
               <li>
-                <a href="#" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
+                <a href="#" class="text-sm text-white/40 transition-colors hover:text-lime">
                   Returns
                 </a>
               </li>
 
               <li>
-                <a href="#" class="text-sm text-white/40 transition-colors
-                        hover:text-lime">
+                <a href="#" class="text-sm text-white/40 transition-colors hover:text-lime">
                   FAQ
                 </a>
               </li>
-
             </ul>
-
           </div>
-
         </div>
-
-
 
         <!-- ===== Newsletter ===== -->
         <div>
-
-          <span class="text-xs font-semibold uppercase
-                     tracking-[0.2em] text-lime">
+          <span class="text-xs font-semibold uppercase tracking-[0.2em] text-lime">
             Stay Updated
           </span>
 
@@ -2097,85 +1765,56 @@
           </h3>
 
           <p class="mt-3 text-sm leading-relaxed text-white/40">
-            Get research updates, new releases, and
-            product announcements.
+            Get research updates, new releases, and product announcements.
           </p>
-
 
           <!-- Newsletter Form -->
           <form class="mt-6">
-
             <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <input type="email" placeholder="your@email.com" required
+                class="h-12 w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 text-sm text-white outline-none placeholder:text-white/25 transition-all duration-300 focus:border-lime/30 focus:bg-white/[0.05]" />
 
-              <input type="email" placeholder="your@email.com" required class="h-12 w-full rounded-xl
-                     border border-white/10
-                     bg-white/[0.03]
-                     px-4 text-sm text-white
-                     outline-none
-                     placeholder:text-white/25
-                     transition-all duration-300
-                     focus:border-lime/30
-                     focus:bg-white/[0.05]" />
-
-              <button type="submit" class="h-12 rounded-xl
-                     bg-lime px-6
-                     text-sm font-semibold text-black
-                     transition-all duration-300
-                     hover:brightness-110
-                     hover:shadow-[0_0_25px_rgba(198,255,61,0.25)]">
-
+              <button type="submit"
+                class="h-12 rounded-xl bg-lime px-6 text-sm font-semibold text-black transition-all duration-300 hover:brightness-110 hover:shadow-[0_0_25px_rgba(198,255,61,0.25)]">
                 Subscribe
-
               </button>
-
             </div>
-
           </form>
-
         </div>
-
       </div>
-
-
 
       <!-- ===== Bottom Footer ===== -->
       <div class="mt-16 border-t border-white/5 pt-8">
-
-        <div class="flex flex-col gap-5
-                  sm:flex-row sm:items-center
-                  sm:justify-between">
-
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <p class="text-xs text-white/30">
             © 2026 PEP-V Labs. All rights reserved.
           </p>
 
-
           <div class="flex flex-wrap gap-6">
 
-            <a href="#" class="text-xs text-white/30
-                    transition-colors hover:text-white/70">
+            <a href="javascript:void(0)" onclick="openPolicyModal('privacy')"
+              class="text-xs text-white/30 transition-colors hover:text-white/70">
               Privacy Policy
             </a>
 
-            <a href="#" class="text-xs text-white/30
-                    transition-colors hover:text-white/70">
+            <a href="javascript:void(0)" onclick="openPolicyModal('returns')"
+              class="text-xs text-white/30 transition-colors hover:text-white/70">
               Terms of Service
             </a>
 
-            <a href="#" class="text-xs text-white/30
-                    transition-colors hover:text-white/70">
+            <a href="javascript:void(0)" onclick="openPolicyModal('disclaimer')"
+              class="text-xs text-white/30 transition-colors hover:text-white/70">
               Research Disclaimer
             </a>
 
+            <a href="javascript:void(0)" onclick="openPolicyModal('shipping')"
+              class="text-xs text-white/30 transition-colors hover:text-white/70">
+              Shipping Policy
+            </a>
           </div>
-
         </div>
-
       </div>
-
-
     </div>
-
   </footer>
 
   <script src="js/main.js"></script>

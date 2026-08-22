@@ -5,15 +5,14 @@
    ========================================= */
 
 @theme {
-  --color-dark: #0B0B0B;
-  --color-lime: #C6FF3D;
-  --color-lime-dim: #A8E020;
+  --color-dark: #0b0b0b;
+  --color-lime: #c6ff3d;
+  --color-lime-dim: #a8e020;
   --color-surface: #141414;
-  --color-surface-light: #1A1A1A;
+  --color-surface-light: #1a1a1a;
 
   --font-sans: "Inter", system-ui, sans-serif;
 }
-
 
 /* =========================================
    BASE
@@ -26,21 +25,13 @@
 
   body {
     background:
-      radial-gradient(
-        circle at top,
-        rgba(198, 255, 61, 0.08),
-        transparent 28%
-      ),
+      radial-gradient(circle at top, rgba(198, 255, 61, 0.08), transparent 28%),
       radial-gradient(
         circle at 80% 10%,
         rgba(198, 255, 61, 0.04),
         transparent 22%
       ),
-      linear-gradient(
-        180deg,
-        #0B0B0B 0%,
-        #090909 100%
-      );
+      linear-gradient(180deg, #0b0b0b 0%, #090909 100%);
 
     color: #fff;
     line-height: 1.6;
@@ -56,7 +47,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #0B0B0B;
+    background: #0b0b0b;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -68,7 +59,6 @@
     background: rgba(198, 255, 61, 0.5);
   }
 }
-
 
 /* =========================================
    GENERAL
@@ -95,23 +85,22 @@
   max-height: min(72vh, 580px);
 }
 
-
 /* =========================================
    CUSTOM CURSOR
-   ========================================= */
+========================================= */
 
 * {
-  cursor: none;
+  cursor: none !important;
 }
 
 .cursor-dot {
   position: fixed;
   width: 8px;
   height: 8px;
-  background: #C6FF3D;
+  background: #c6ff3d;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 10001;
   transform: translate(-50%, -50%);
   transition:
     width 0.2s,
@@ -124,10 +113,10 @@
   position: fixed;
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(198, 255, 61, 0.4);
+  border: 1px solid rgba(198, 255, 61, 0.7);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9998;
+  z-index: 10000;
   transform: translate(-50%, -50%);
   transition:
     width 0.3s ease,
@@ -140,8 +129,8 @@
 .cursor-ring.hover {
   width: 60px;
   height: 60px;
-  border-color: rgba(198, 255, 61, 0.6);
-  background: rgba(198, 255, 61, 0.05);
+  border-color: rgba(198, 255, 61, 0.9);
+  background: rgba(198, 255, 61, 0.08);
 }
 
 .cursor-dot.hover {
@@ -194,7 +183,7 @@
 }
 
 .nav-link {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.6);
   transition: color 0.3s;
@@ -208,7 +197,7 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: #C6FF3D;
+  background: #c6ff3d;
   transition: width 0.3s ease;
 }
 
@@ -223,7 +212,7 @@
 .nav-link-featured {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #C6FF3D;
+  color: #c6ff3d;
   transition:
     color 0.3s,
     text-shadow 0.3s;
@@ -237,7 +226,7 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: #C6FF3D;
+  background: #c6ff3d;
   opacity: 0.5;
 }
 
@@ -255,13 +244,13 @@
 }
 
 .mobile-nav-link:hover {
-  color: #C6FF3D;
+  color: #c6ff3d;
 }
 
 .mobile-nav-link-featured {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #C6FF3D;
+  color: #c6ff3d;
   padding: 0.5rem 0;
   transition: color 0.3s;
 }
@@ -282,7 +271,6 @@
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
-
 /* =========================================
    BADGES
    ========================================= */
@@ -299,9 +287,8 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #C6FF3D;
+  color: #c6ff3d;
 }
-
 
 /* =========================================
    BUTTONS
@@ -311,8 +298,8 @@
   display: inline-flex;
   align-items: center;
   padding: 0.75rem 1.75rem;
-  background: #C6FF3D;
-  color: #0B0B0B;
+  background: #c6ff3d;
+  color: #0b0b0b;
   font-weight: 600;
   font-size: 0.875rem;
   border-radius: 9999px;
@@ -326,13 +313,12 @@
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.3),
-      transparent
-    );
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transform: translateX(-100%);
   transition: transform 0.5s;
 }
@@ -370,10 +356,9 @@
 
 .btn-outline:hover {
   border-color: rgba(198, 255, 61, 0.4);
-  color: #C6FF3D;
+  color: #c6ff3d;
   background: rgba(198, 255, 61, 0.05);
 }
-
 
 /* =========================================
    HERO
@@ -394,13 +379,7 @@
 }
 
 .text-gradient {
-  background:
-    linear-gradient(
-      135deg,
-      #C6FF3D 0%,
-      #A8E020 50%,
-      #C6FF3D 100%
-    );
+  background: linear-gradient(135deg, #c6ff3d 0%, #a8e020 50%, #c6ff3d 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -409,18 +388,16 @@
 }
 
 .bottle-shine {
-  background:
-    linear-gradient(
-      105deg,
-      transparent 40%,
-      rgba(255, 255, 255, 0.08) 45%,
-      rgba(255, 255, 255, 0.15) 50%,
-      rgba(255, 255, 255, 0.08) 55%,
-      transparent 60%
-    );
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.08) 55%,
+    transparent 60%
+  );
   animation: bottleShine 4s ease-in-out infinite;
 }
-
 
 /* =========================================
    ANIMATIONS
@@ -469,7 +446,6 @@
   }
 }
 
-
 /* =========================================
    STATS
    ========================================= */
@@ -504,9 +480,8 @@
 .stat-icon svg {
   width: 24px;
   height: 24px;
-  color: #C6FF3D;
+  color: #c6ff3d;
 }
-
 
 /* =========================================
    PRODUCTS
@@ -537,33 +512,36 @@
   justify-content: center;
   border-radius: 9999px;
   background: rgba(198, 255, 61, 0.1);
-  color: #C6FF3D;
+  color: #c6ff3d;
   margin-bottom: 1rem;
 }
 
 .overview-icon svg {
   width: 24px;
   height: 24px;
-  color: #C6FF3D;
+  color: #c6ff3d;
 }
 
 .product-card {
   position: relative;
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
+  background: rgba(20, 24, 14, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
+  isolation: isolate;
   transition:
-    all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .product-card:hover {
   transform: translateY(-8px);
   border-color: rgba(198, 255, 61, 0.2);
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(198, 255, 61, 0.08);
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(198, 255, 61, 0.06);
+  z-index: 10;
 }
 
 .product-image-wrap {
@@ -577,8 +555,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition:
-    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .product-card:hover .product-image {
@@ -600,7 +577,6 @@
   opacity: 1;
 }
 
-
 /* =========================================
    GLASS CARD
    ========================================= */
@@ -613,11 +589,11 @@
 }
 
 .vials-mega-menu {
-    background: rgba(20, 25, 12, 0.98);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  background: rgba(20, 25, 12, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
 }
 
 /* =========================================
@@ -647,9 +623,8 @@
 .check-icon svg {
   width: 14px;
   height: 14px;
-  color: #C6FF3D;
+  color: #c6ff3d;
 }
-
 
 /* =========================================
    BENEFITS
@@ -690,9 +665,8 @@
 .benefit-icon svg {
   width: 24px;
   height: 24px;
-  color: #C6FF3D;
+  color: #c6ff3d;
 }
-
 
 /* =========================================
    TESTIMONIALS
@@ -718,7 +692,7 @@
 }
 
 .stars {
-  color: #C6FF3D;
+  color: #c6ff3d;
   font-size: 0.875rem;
   letter-spacing: 2px;
 }
@@ -737,7 +711,7 @@
 
 .carousel-btn:hover {
   border-color: rgba(198, 255, 61, 0.3);
-  color: #C6FF3D;
+  color: #c6ff3d;
   background: rgba(198, 255, 61, 0.05);
 }
 
@@ -751,11 +725,10 @@
 }
 
 .carousel-dot.active {
-  background: #C6FF3D;
+  background: #c6ff3d;
   width: 24px;
   border-radius: 4px;
 }
-
 
 /* =========================================
    BLOG
@@ -787,11 +760,10 @@
 .blog-tag {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #C6FF3D;
+  color: #c6ff3d;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-
 
 /* =========================================
    FOOTER
@@ -804,7 +776,7 @@
 }
 
 .footer-link:hover {
-  color: #C6FF3D;
+  color: #c6ff3d;
 }
 
 .social-link {
@@ -821,7 +793,7 @@
 
 .social-link:hover {
   border-color: rgba(198, 255, 61, 0.3);
-  color: #C6FF3D;
+  color: #c6ff3d;
   background: rgba(198, 255, 61, 0.05);
 }
 
@@ -844,7 +816,6 @@
 .newsletter-input:focus {
   border-color: rgba(198, 255, 61, 0.4);
 }
-
 
 /* =========================================
    SCROLL REVEAL
@@ -875,7 +846,6 @@
   transition-delay: 0.3s;
 }
 
-
 /* =========================================
    RESPONSIVE
    ========================================= */
@@ -896,4 +866,37 @@
   * {
     cursor: auto;
   }
+}
+
+/* ===== Policy Modal ===== */
+
+.policy-tab {
+  flex-shrink: 0;
+
+  padding: 8px 14px;
+
+  border-radius: 9999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 0.875rem;
+
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+.policy-tab:hover {
+  color: white;
+  border-color: rgba(198, 255, 61, 0.3);
+}
+
+.policy-tab.active {
+  color: #c6ff3d;
+
+  background: rgba(198, 255, 61, 0.1);
+
+  border-color: rgba(198, 255, 61, 0.3);
 }
