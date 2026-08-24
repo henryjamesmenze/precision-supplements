@@ -479,7 +479,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </h2>
 
         <p class="text-white/60 text-sm leading-relaxed">
-          You must be at least 18 years old to access this website.
+          You must be at least 21 years old to access this website.
         </p>
 
       </div>
