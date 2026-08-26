@@ -401,7 +401,7 @@ function initSmoothAnchors() {
 
 /* ===== WhatsApp Product Contact ===== */
 function contactWhatsApp(productName) {
-  const whatsappNumber = "57XXXXXXXXXX";
+  const whatsappNumber = "15618366134";
 
   const message = `Hello PEP-V Labs, I am interested in the ${productName}. I would like to receive more information about this product, including availability and pricing. Thank you.`;
 
