@@ -400,14 +400,36 @@ function initSmoothAnchors() {
 }
 
 /* ===== WhatsApp Product Contact ===== */
-function contactWhatsApp(productName) {
-  const whatsappNumber = "15618366134";
+function contactWhatsApp(option) {
+  const phone = "15618366134";
 
-  const message = `Hello PEP-V Labs, I am interested in the ${productName}. I would like to receive more information about this product, including availability and pricing. Thank you.`;
+  let message = "";
 
-  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  switch (option) {
 
-  window.open(whatsappURL, "_blank");
+    case "Contact Us":
+      message = "Hello, I would like to contact PEP-V Labs. I have a question and would like some assistance.";
+      break;
+
+    case "Shipping":
+      message = "Hello, I would like more information about your shipping options, rates, processing times, and delivery times.";
+      break;
+
+    case "Returns":
+      message = "Hello, I would like more information about your return and refund policy.";
+      break;
+
+    case "FAQ":
+      message = "Hello, I have a question about PEP-V Labs and would like some information.";
+      break;
+
+    default:
+      message = `Hello, I would like more information about ${option}.`;
+  }
+
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+  window.open(url, "_blank");
 }
 
 // =========================================================
